@@ -6,7 +6,6 @@ import sys
 
 root = tk.Tk()
 root.withdraw()
-tkinter.messagebox.showinfo("Information!","You MUST run Ark Code Generator first to get the blueprint locations!\nOtherwise this program will not work.")
 regexx = r"SpawnDino (\".*\")"
 Result = {}
 res = ""
@@ -32,7 +31,11 @@ for stuff in Result[0]:
     res += ('{}'.format(stuff+";"))
     tick += 1
 
+if res == "":
+    tkinter.messagebox.showerror("Error!","Output.txt does not contain any dinosaurs!")
+    sys.exit()
+
 with open('./NewOutput.txt', 'w', encoding='utf-8') as ff:
     ff.write(res)
 
-tkinter.messagebox.showinfo("Success!","Your Blueprint paths is in the \"NewOutput.txt\" file.")
+tkinter.messagebox.showinfo("Success!","Your Blueprint paths is in the \"NewOutput.txt\" file.\nTotal Dinos: {}".format(tick))
