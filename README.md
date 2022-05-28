@@ -23,3 +23,5 @@ if the output.txt file exists... run my program and voila, you now have all the 
 
 my program will add a new text file called "NewOutput.txt".
 and thats it!
+
+Download my tool here: https://github.com/Lust-Ware/SimpleSpawnersBlueprintMaker/releases
